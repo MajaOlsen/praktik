@@ -1,0 +1,536 @@
+/*FONTS*/
+@font-face {
+  font-family: Nunito;
+  src: url(fonts/Nunito-VariableFont_wght.woff2);
+}
+
+/*ALMEN STYLING*/
+header {
+  display: flex;
+  flex-direction: column;
+}
+
+.logo_container {
+  display: flex;
+  justify-content: center;
+}
+
+.topMenu_section {
+  background-color: #8ea7ed;
+  padding: 6px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.mail {
+  background-color: rgb(222, 222, 255);
+  padding: 5px 10px;
+  border-radius: 10px;
+}
+
+.mail a {
+  color: #31416e;
+  text-decoration: none;
+}
+
+footer {
+  background-color: #fe877a;
+  padding: 1em;
+}
+
+body {
+  margin: 0;
+}
+
+main {
+  padding-left: 10vw;
+  padding-right: 10vw;
+}
+
+h1 {
+  color: rgb(46, 46, 86);
+}
+
+h2 {
+  font-family: Nunito;
+  color: rgb(46, 46, 86);
+}
+
+h3 {
+  font-family: Nunito;
+  color: rgb(46, 46, 86);
+}
+
+h4 {
+  font-family: Nunito;
+  color: rgb(46, 46, 86);
+}
+
+p,
+li,
+a {
+  font-size: 16px;
+  font-family: Nunito;
+  color: rgb(46, 46, 86);
+}
+
+header img {
+  width: 120px;
+  padding-bottom: 5px;
+  padding-top: 5px;
+}
+
+section {
+  padding-bottom: 3em;
+  padding-right: 1em;
+  padding-left: 1em;
+  padding-top: 1em;
+}
+
+/*SECTION COLORS*/
+.blue {
+  background-color: #8ea7ed;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.orange {
+  background-color: #fe877a;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.periwinkle {
+  background-color: rgb(204, 204, 255);
+  padding: 20px;
+  border-radius: 8px;
+}
+
+/*TOGGLE SWITCHER*/
+
+.toggle-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.toggle-switch {
+  position: relative;
+  width: 50px;
+  height: 25px;
+}
+
+.toggle-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgb(204, 204, 255);
+  transition: 0.4s;
+  border-radius: 25px;
+}
+
+.slider::before {
+  content: "";
+  position: absolute;
+  height: 17px;
+  width: 17px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: rgb(204, 204, 255);
+}
+
+input:checked + .slider::before {
+  transform: translateX(24px);
+}
+
+/*H1 ANIMATION */
+
+/*INTRODUCTION SECTION*/
+.creative_section {
+  display: flex;
+  gap: 2rem;
+  padding: 2rem;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-wrap: wrap; /* sikrer det bryder på små skærme */
+}
+
+.creative_section > div {
+  flex: 1 1 300px; 
+}
+
+/* Billedet */
+.introductionIMG_container {
+  display: flex;
+  justify-content: flex-end; 
+}
+
+.introductionIMG_container img {
+  max-width: 400px;  /* eller hvad du synes passer bedst */
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+/* Responsiv justering */
+@media (max-width: 768px) {
+  .creative_section {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .introductionIMG_container {
+    margin-top: 1.5rem;
+    justify-content: center;
+  }
+
+  .creative_section > div {
+    width: 100%;
+  }
+}
+
+
+/*HERO STYLING*/
+
+header{
+  justify-items: center;
+  align-items: center;
+}
+.hero_section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  justify-self: center;
+  align-self: center;
+  align-items: center;
+  height: 30vh;
+  text-align: center;
+}
+
+.hero-text {
+  font-family: monospace;
+  font-size: 1.5rem;
+  margin: 1rem 0;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 0.15em solid #fe877a;
+  max-width: 0;
+  animation: typing 2s steps(40, end) forwards, blink-caret 0.75s step-end infinite;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hero-text:nth-child(2) {
+  animation-delay: 3s;
+}
+
+.hero-text:nth-child(3) {
+  animation-delay: 6s;
+}
+
+@keyframes typing {
+  from { max-width: 0 }
+  to { max-width: 100% }
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: #fe877a }
+}
+
+
+
+
+/*SCROLLBAR TIL GRAFISK PROJEKTER*/
+
+.scroll-container {
+  width: 100%;
+  max-height: 300px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  white-space: nowrap;
+  scrollbar-width: thin;
+  scrollbar-color: #abaecc #f4f4f4;
+  border-radius: 10px;
+  margin-top: 2em;
+  margin-bottom: 2em;
+}
+
+.scroll-content {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.scroll-content img {
+  height: 300px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/*SKILLS SECTION*/
+
+
+.strength-icon{
+  padding: 0;
+
+}
+.strengths {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+  margin-bottom: 4rem;
+}
+
+.strength-box {
+  background-color: #f2f2f6;
+  padding: 1.5rem;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  transform: translateY(30px);
+  opacity: 0;
+  transition: all 0.8s ease-out;
+}
+
+.strength-box.visible {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.delay-1 { transition-delay: 0.2s; }
+.delay-2 { transition-delay: 0.5s; }
+.delay-3 { transition-delay: 0.8s; }
+
+.strength-icon {
+  width: 50px;
+  height: 50px;
+  margin-bottom: 1rem;
+}
+
+.fade-in {
+  animation: fadeInUp 0.8s forwards;
+}
+
+.delay-1 {
+  animation-delay: 0.2s;
+}
+
+.delay-2 {
+  animation-delay: 0.5s;
+}
+
+.delay-3 {
+  animation-delay: 0.8s;
+}
+
+@keyframes fadeInUp {
+  from {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+
+.skills_section h2 {
+  margin-bottom: 40px;
+  text-align: center;
+  margin-top: 0;
+}
+
+
+
+.bars_container {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  max-width: 900px;
+  margin: auto;
+  margin-bottom: 20px;
+}
+
+.label {
+  width: 150px; 
+  font-size: 14px;
+  color: #333;
+  text-align: left;
+  padding-right: 10px;
+  font-family: Nunito;
+}
+
+.progress-bar {
+  flex: 1;
+  height: 20px;
+  background-color: #e0e0e0;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-left: 10px;
+}
+
+.progress {
+  height: 100%;
+  width: 0%; /* Start at 0% */
+  background-color: #fe877a;
+  text-align: center;
+  line-height: 20px;
+  color: white;
+  font-weight: bold;
+  border-radius: 10px;
+  transition: width 4s ease-out; /* Smooth transition when width changes */
+}
+
+
+/*TRAITS STYLING*/
+
+.bestTraits_section {
+  /* display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 30px; */
+  padding: 3em;
+  text-align: center;
+}
+
+/*PROJECTS STYLING*/
+
+.projects_container {
+  display: grid;
+  /* grid-template-columns: 1fr 1fr; */
+  justify-items: center;
+  
+
+  img{
+    width: 400px;
+    border-radius: 20px;
+    border:#fe877a solid 2px
+  }
+
+  div{
+    max-width: 500px;
+    padding-top:1em;
+  }
+}
+
+.myProjects_section h2 {
+  text-align: center;
+}
+
+.myProjects_section h4 {
+  text-align: center;
+  margin: 5px;
+}
+
+.myProjects_section p {
+  text-align: center;
+  margin: 0;
+  padding-bottom: 1em;
+}
+
+.myProjects_section a {
+  padding: 4px 15px;
+  background-color: #8ea7ed;
+  border-radius: 10px;
+  border: solid #8ea7ed 2px;
+  text-decoration: none;
+  font-weight: 600;
+  margin-bottom: 1em;
+  color: white;
+}
+.myProjects_section {
+  text-align: center;
+  padding: 2em ;
+  border: solid 2px #fe877a;
+  border-radius: 20px;
+}
+
+.projects_container {
+  display: grid;
+  justify-items: center;   align-items: start;
+}
+
+.projects_container div {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+}
+
+.projects_container a {
+  display: inline-block; /
+}
+
+
+.myProjects_section a:hover {
+  background-color: white;
+  filter: brightness(97%);
+  color: #31416e;
+}
+
+/*Reach out section*/
+
+.reachOut_section a {
+  text-decoration: none;
+}
+
+.reachOut_section a:hover {
+  color: #fe877a;
+}
+
+
+
+@media (min-width: 750px) {
+  .introduction_section {
+    display: grid;
+    grid-template-columns: 80% 20%;
+    align-items: center;
+    gap: 1em;
+  }
+
+  .introduction_section p{
+    padding-left:3em ;
+    padding-right: 3em;
+  }
+}
+
+@media (min-width: 900px) {
+
+  .projects_container {
+    grid-template-columns: 1fr 1fr; 
+    gap: 2em;
+   
+  }
+
+}
+
+footer{
+  text-align: center;
+  padding: 5px;
+  margin: 0;
+}
