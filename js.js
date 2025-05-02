@@ -1,11 +1,26 @@
-// Toggle switcher
+// Toggle switcher - skift sprog
 document.getElementById("toggle").addEventListener("change", function () {
-  document.getElementById("toggle-text").textContent = this.checked ? "🇬🇧" : "🇩🇰";
+  const isEnglish = this.checked;
+
+  // Vis/skjul tekster baseret på valgt sprog
+  const texts = document.querySelectorAll(".text[data-lang]");
+  texts.forEach((el) => {
+    const lang = el.getAttribute("data-lang");
+    el.style.display = (isEnglish && lang === "en") || (!isEnglish && lang === "da") ? "inline" : "none";
+  });
 });
 
-// Animation til progress barer
-const progressBars = document.querySelectorAll(".progress");
+// Start med dansk synligt, engelsk skjult
+window.addEventListener("DOMContentLoaded", () => {
+  const texts = document.querySelectorAll(".text[data-lang]");
+  texts.forEach((el) => {
+    const lang = el.getAttribute("data-lang");
+    el.style.display = lang === "da" ? "inline" : "none";
+  });
+});
 
+// Progress bar animation
+const progressBars = document.querySelectorAll(".progress");
 const progressObserver = new IntersectionObserver(
   (entries, observer) => {
     entries.forEach((entry) => {
@@ -19,14 +34,10 @@ const progressObserver = new IntersectionObserver(
   },
   { threshold: 0.5 }
 );
+progressBars.forEach((bar) => progressObserver.observe(bar));
 
-progressBars.forEach((progressBar) => {
-  progressObserver.observe(progressBar);
-});
-
-// Animation til styrker (fade-in med delay)
+// Fade-in animation til styrke-bokse
 const strengthBoxes = document.querySelectorAll(".strength-box");
-
 const strengthObserver = new IntersectionObserver(
   (entries, observer) => {
     entries.forEach((entry) => {
@@ -38,7 +49,4 @@ const strengthObserver = new IntersectionObserver(
   },
   { threshold: 0.2 }
 );
-
-strengthBoxes.forEach((box) => {
-  strengthObserver.observe(box);
-});
+strengthBoxes.forEach((box) => strengthObserver.observe(box));
